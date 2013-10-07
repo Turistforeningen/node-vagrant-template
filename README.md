@@ -3,6 +3,11 @@ Vagrantfile for NodeJS projects
 
 Our Vagrantfile template for new NodeJS projects.
 
+## Configuration
+
+After line `20` in the Vagrantfile you can comment out or in what versions of
+NodeJS you want to install. Version 0.10 is installed by default.
+
 ## License
 
 The MIT License (MIT)

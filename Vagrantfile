@@ -10,7 +10,7 @@ sudo -u vagrant cp /vagrant/.ssh/* /home/vagrant/.ssh/.
 # Update & Install
 echo 'Updating and installing ubuntu packages...'
 apt-get update
-apt-get install -y build-essential git curl mongodb-10gen autossh
+apt-get install -y build-essential git curl
 
 # NodeJS via NVM
 echo "Installing Node Version Manager..."

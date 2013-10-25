@@ -4,13 +4,12 @@
 # Boostrap Script
 $script = <<SCRIPT
 
-# SSH keys
-sudo -u vagrant cp /vagrant/.ssh/* /home/vagrant/.ssh/.
-
 # Update & Install
 echo 'Updating and installing ubuntu packages...'
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
 apt-get update
-apt-get install -y build-essential git curl
+apt-get install -y build-essential git curl mongodb-10gen
 
 # NodeJS via NVM
 echo "Installing Node Version Manager..."
@@ -24,14 +23,10 @@ nvm install 0.10
 export HOME=/home/root
 
 # NPM package install
-echo "Installing NPM packages..."
-echo "PATH=$PATH:/vagrant/node_modules/.bin" >> /home/vagrant/.bashrc
-PATH=$PATH:/vagrant/node_modules/.bin
-cd /vagrant/ && npm install
-
-# Install localtunnel
-echo 'Installing localtunnel for easy sharing...'
-npm install -g localtunnel
+#echo "Installing NPM packages..."
+#echo "PATH=$PATH:/vagrant/node_modules/.bin" >> /home/vagrant/.bashrc
+#PATH=$PATH:/vagrant/node_modules/.bin
+#cd /vagrant/ && npm install
 
 SCRIPT
 

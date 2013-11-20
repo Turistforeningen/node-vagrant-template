@@ -28,6 +28,8 @@ export HOME=/home/root
 #PATH=$PATH:/vagrant/node_modules/.bin
 #cd /vagrant/ && npm install
 
+echo "cd /vagrant" >> /home/vagrant/.bashrc
+
 SCRIPT
 
 Vagrant.configure("2") do |config|
@@ -46,7 +48,7 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network :forwarded_port, guest: 3000, host: 3000
-  
+
   # The shell provisioner allows you to upload and execute a script as the root
   # user within the guest machine.
   config.vm.provision :shell, :inline => $script
@@ -69,9 +71,9 @@ Vagrant.configure("2") do |config|
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
-  
+
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "256"]
   end
-  
+
 end

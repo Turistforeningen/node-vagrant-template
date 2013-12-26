@@ -24,10 +24,12 @@ chown -R vagrant:vagrant /home/vagrant/.nvm
 export HOME=/home/root
 
 # NPM package install
-#echo "Installing NPM packages..."
-#echo "PATH=$PATH:/vagrant/node_modules/.bin" >> /home/vagrant/.bashrc
-#PATH=$PATH:/vagrant/node_modules/.bin
-#cd /vagrant/ && npm install
+echo "Installing NPM packages..."
+echo "PATH=$PATH:/vagrant/node_modules/.bin" >> /home/vagrant/.bashrc
+PATH=$PATH:/vagrant/node_modules/.bin
+cd /vagrant/
+rm -rf node_modules/
+npm install
 
 SCRIPT
 

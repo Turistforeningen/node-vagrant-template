@@ -26,6 +26,7 @@ export HOME=/home/root
 # Vagratnt Environment Varaibles
 echo "Setting environment variables..."
 echo "export NODE_ENV=development" >> /home/vagrant/.bashrc
+echo "cd /vagrant" >> /home/vagrant/.bashrc
 
 # NPM package install
 echo "Installing NPM packages..."
@@ -34,7 +35,9 @@ PATH=$PATH:/vagrant/node_modules/.bin
 cd /vagrant && rm -rf node_modules
 [ -f package.json ] && npm install
 
-echo "cd /vagrant" >> /home/vagrant/.bashrc
+# Clean up permissions
+chown vagrant:vagrant /home/vagrant/.nvm
+chown vagrant:vagrant /home/vagrant/tmp
 
 SCRIPT
 

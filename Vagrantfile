@@ -55,6 +55,17 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network :forwarded_port, guest: 3000, host: 3000
 
+  # A Vagrant plugin that helps you reduce the amount of coffee you drink while
+  # waiting for boxes to be provisioned by sharing a common package cache among
+  # similiar VM instances. Kinda like vagrant-apt_cache or this magical snippet
+  # but targetting multiple package managers and Linux distros.
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.auto_detect = true
+
+    # For VirtualBox, we want to enable NFS for shared folders
+    # config.cache.enable_nfs = true
+  end
+
   # The shell provisioner allows you to upload and execute a script as the root
   # user within the guest machine.
   config.vm.provision :shell, :inline => $script

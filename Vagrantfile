@@ -23,7 +23,7 @@ nvm install 0.10
 chown -R vagrant:vagrant /home/vagrant/.nvm
 export HOME=/home/root
 
-# Vagratnt Environment Varaibles
+# Set Environment Varaibles
 echo "Setting environment variables..."
 echo "export NODE_ENV=development" >> /home/vagrant/.bashrc
 echo "cd /vagrant" >> /home/vagrant/.bashrc

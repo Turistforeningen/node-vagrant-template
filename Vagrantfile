@@ -11,7 +11,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 apt-get update
 apt-get install -y build-essential git curl mongodb-10gen
 
-# NodeJS via NVM
+# Install NodeJS via NVM
 echo "Installing Node via NVM..."
 export HOME=/home/vagrant
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh

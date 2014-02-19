@@ -12,7 +12,7 @@ apt-get update
 apt-get install -y build-essential git curl mongodb-10gen
 
 # NodeJS via NVM
-echo "Installing Node Version Manager..."
+echo "Installing Node via NVM..."
 export HOME=/home/vagrant
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 echo "source ~/.nvm/nvm.sh" >> /home/vagrant/.bashrc

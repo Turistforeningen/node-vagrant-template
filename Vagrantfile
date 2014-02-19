@@ -23,6 +23,10 @@ nvm install 0.10
 chown -R vagrant:vagrant /home/vagrant/.nvm
 export HOME=/home/root
 
+# Vagratnt Environment Varaibles
+echo "Setting environment variables..."
+echo "export NODE_ENV=development" >> /home/vagrant/.bashrc
+
 # NPM package install
 echo "Installing NPM packages..."
 echo "PATH=$PATH:/vagrant/node_modules/.bin" >> /home/vagrant/.bashrc

@@ -20,7 +20,6 @@ source /home/vagrant/.nvm/nvm.sh
 #nvm install 0.8
 nvm install 0.10
 #nvm install 0.11
-chown -R vagrant:vagrant /home/vagrant/.nvm
 export HOME=/home/root
 
 # Set Environment Varaibles
@@ -36,8 +35,8 @@ cd /vagrant && rm -rf node_modules
 [ -f package.json ] && npm install
 
 # Clean up permissions
-chown vagrant:vagrant /home/vagrant/.nvm
-chown vagrant:vagrant /home/vagrant/tmp
+chown -R vagrant:vagrant /home/vagrant/.nvm
+chown -R vagrant:vagrant /home/vagrant/tmp
 
 SCRIPT
 

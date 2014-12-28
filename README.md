@@ -1,32 +1,42 @@
 Vagrantfile for NodeJS projects
 ===============================
 
-Our Vagrantfile template for new NodeJS projects.
+Vagrant development environment template for your brand new NodeJS projects.
 
-## Configuration
+## Install
 
-After line `20` in the Vagrantfile you can comment out or in what versions of
-NodeJS you want to install. Version 0.10 is installed by default.
+Just clone this repo and start your new Node project.
 
-## License
+```bash
+git clone git@github.com:Turistforeningen/node-vagrant-template.git node-project
+cd node-project
+rm -rf .git
+git init
+```
 
-The MIT License (MIT)
+## Configure
 
-Copyright (c) 2013 Den Norske Turistforeningen (DNT)
+### Add your environment variables
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+Just add each variable you want to add to your environment as a file in the
+`./env` directory. These will be read when Vagrant is starting and will be
+avaiable as environment variables during runtime.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+```bash
+echo -n "topsecret" > env/MY_SECRET
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### Update your package.json
+
+Remember to update the package.json file with a propper name, description and
+any package dependencies you may have.
+
+## Profit
+
+```bash
+vagrant up
+vagrant ssh
+```
+
+## [MIT Licensed](https://github.com/Turistforeningen/node-vagrant-template/blob/master/LICENSE)
+

@@ -1,0 +1,35 @@
+{
+  "name": "node-vagrant-template",
+  "version": "1.0.0",
+  "description": "A Node.JS template setup for Vagrant",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test",
+    "src": "src",
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "coffee --bare --compile --output lib/ src/*.litcoffee",
+    "prepublish": "coffee --bare --compile --output lib/ src/*.litcoffee",
+    "postpublish": "rm -rf lib/*",
+    "test": "mocha -w -b -c --check-leaks test/index.coffee -R progress --compilers coffee:coffee-script/register",
+    "test-drone": "INTEGRATION_TEST=true node_modules/.bin/mocha -b -c --check-leaks test/index.coffee -R spec --compilers coffee:coffee-script/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Turistforeningen/node-vagrant-template.git"
+  },
+  "keywords": [
+    "Example"
+  ],
+  "author": "Hans Kristian Flaatten <hans.kristian.flaatten@turistforeningen.no>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turistforeningen/node-vagrant-template/issues"
+  },
+  "homepage": "https://github.com/Turistforeningen/node-vagrant-template",
+  "devDependencies": {
+    "coffee-script": "~1",
+    "mocha": "~2"
+  }
+}

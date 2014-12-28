@@ -9,14 +9,19 @@ lib-cov
 *.swp
 *.swo
 .DS_Store
+.gitignore
+.npmignore
+.vim.custom
 
 pids
 logs
 results
 
 node_modules/
-lib/
+src/
 env/
+test/
 
+Vagrantfile
 .vagrant/
 

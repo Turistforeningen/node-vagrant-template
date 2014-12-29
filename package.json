@@ -12,8 +12,8 @@
     "build": "coffee --bare --compile --output lib/ src/*.litcoffee",
     "prepublish": "coffee --bare --compile --output lib/ src/*.litcoffee",
     "postpublish": "rm -rf lib/*",
-    "test": "mocha -w -b -c --check-leaks test/index.coffee -R progress --compilers coffee:coffee-script/register",
-    "test-drone": "INTEGRATION_TEST=true node_modules/.bin/mocha -b -c --check-leaks test/index.coffee -R spec --compilers coffee:coffee-script/register"
+    "test": "mocha -w -b -c --check-leaks test/index.coffee -R progress --compilers coffee:coffee-script/register,litcoffee:coffee-script/register",
+    "test-drone": "INTEGRATION_TEST=true node_modules/.bin/mocha -b -c --check-leaks test/index.coffee -R spec --compilers coffee:coffee-script/register,litcoffee:coffee-script/register"
   },
   "repository": {
     "type": "git",
